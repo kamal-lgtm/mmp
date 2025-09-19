@@ -1,9 +1,9 @@
 <?php
 // === CONFIG MYSQL (MAMP par défaut) ===
 $DB_HOST = 'localhost';  // ou 127.0.0.1
-$DB_USER = 'moviemak_ptf';
-$DB_PASS = 'q8d0ZiAVG%';
-$DB_NAME = 'moviemak_portfolio';
+$DB_USER = 'root';
+$DB_PASS = 'root';
+$DB_NAME = 'portfolio';
 
 try {
   $pdo = new PDO("mysql:host={$DB_HOST};dbname={$DB_NAME};charset=utf8mb4", $DB_USER, $DB_PASS, [

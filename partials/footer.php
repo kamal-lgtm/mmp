@@ -1,3 +1,5 @@
+</div> <!-- Fermeture de .main-content -->
+
 <footer>
   <p>&copy; <?= date('Y') ?> Movie Makers - Tous droits réservés.</p>
 </footer>

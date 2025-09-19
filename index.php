@@ -22,14 +22,21 @@ $projects = $pdo->query("
       <a href="#" data-filter="<?= e($cat['nom']) ?>"><?= e($cat['nom']) ?></a>
     <?php endforeach; ?>
   </nav>
+  
   <div class="grid-home">
     <?php foreach($projects as $proj): ?>
       <a href="project.php?id=<?= $proj['id'] ?>" class="card" data-category="<?= e($proj['categorie']) ?>">
-        <img src="backoffice/<?= e($proj['cover']) ?>" alt="<?= e($proj['titre']) ?>" loading="lazy" onerror="this.src='assets/img/placeholder.svg'">
+        <img 
+          src="<?= $proj['cover'] ? 'backoffice/' . e($proj['cover']) : 'assets/img/placeholder.svg' ?>" 
+          alt="<?= e($proj['titre']) ?>" 
+          loading="lazy" 
+          onerror="this.src='assets/img/placeholder.svg'"
+        >
         <h3><?= e($proj['titre']) ?></h3>
         <p><?= e($proj['annee']) ?> - <?= e($proj['categorie']) ?></p>
       </a>
     <?php endforeach; ?>
   </div>
 </main>
+
 <?php require_once __DIR__ . '/partials/footer.php'; ?>
